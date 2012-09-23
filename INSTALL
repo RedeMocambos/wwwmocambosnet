@@ -3,16 +3,22 @@ encontra na pasta "script":
 
  ./install-django-env.sh
 
-Para ativar o ambiente:
-
- source ~/VirtualEnvs/wwwmocambosnet/bin/activate
-
 Copie e/ou altere os arquivos "settings.dist.py" e "urls.py" que
 encontra na pasta "wwwmocambosnet".
 
 Tem que criar o banco de dados e os colocar as informações.
 
 Tem que verificar que todos os links estao certos.
+
+Ativar o ambiente, inicializar o banco e coletar os arquivos staticos:
+
+ source ~/VirtualEnvs/wwwmocambosnet/bin/activate
+
+ python manage.py syncdb --all
+
+ python manage.py migrate --fake
+
+ python manage.py collectstatic
 
 Para configurar o apache pode usar o arquivo de configuração de
 exemplo "conf/wwwmocambosnet".

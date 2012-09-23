@@ -1,5 +1,5 @@
 # Pacotes necessarios 
-sudo apt-get install libjpeg8-dev libmysqlclient-dev libldap2-dev libsasl2-dev libssl-dev python-virtualenv python2.6 python2.6-dev
+sudo apt-get install libjpeg8-dev libmysqlclient-dev libldap2-dev libsasl2-dev libssl-dev python-virtualenv python2.6 python2.6-dev zip
 virtualenv -p /usr/bin/python2.6 --no-site-packages --distribute ~/VirtualEnvs/wwwmocambosnet
 source ~/VirtualEnvs/wwwmocambosnet/bin/activate
 pip install -r requirements.txt

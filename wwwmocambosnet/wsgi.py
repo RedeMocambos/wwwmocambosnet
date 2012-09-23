@@ -15,6 +15,7 @@ framework.
 """
 import os
 import sys
+import site
 
 path1 = '/home/baobaxia/wwwmocambosnet'
 if path1 not in sys.path:
@@ -23,6 +24,9 @@ if path1 not in sys.path:
 # path2 = '/home/baobaxia/wwwmocambosnet/wwwmocambosnet'
 # if path2 not in sys.path:
 #     sys.path.append(path2)
+
+
+site.addsitedir('/home/baobaxia/VirtualEnvs/wwwmocambosnet/lib/python2.6/site-packages')
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wwwmocambosnet.settings")
 
