@@ -1,0 +1,22 @@
+<VirtualHost *:80>
+   ServerName dandara
+   ServerAlias dandara.zapto.org
+   ServerAdmin contato@mocambos.org
+
+   DocumentRoot /home/baobaxia/wwwmocambosnet/www/
+
+   WSGIScriptAlias / /home/baobaxia/wwwmocambosnet/wwwmocambosnet/wsgi.py
+   <Directory /home/baobaxia/wwwmocambosnet/wwwmocambosnet>
+      Order allow,deny
+      Allow from all
+   </Directory>
+
+   Alias /robots.txt /home/baobaxia/wwwmocambosnet/www/robots.txt
+   Alias /favicon.ico /home/baobaxia/wwwmocambosnet/www/favicon.ico
+   Alias /images /home/baobaxia/wwwmocambosnet/www/images
+   Alias /static /home/baobaxia/wwwmocambosnet/www/static
+
+   LogLevel debug
+   ErrorLog /home/baobaxia/wwwmocambosnet/logs/error.log
+   CustomLog /home/baobaxia/wwwmocambosnet/logs/access.log combined
+</VirtualHost>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block base_content %}
+<div id="cabecalho">
+  {% placeholder cabecalho %}
+</div>
+<div id="destaque">
+  {% placeholder destaque %}
+</div>
+<div id="galeria">
+  {% placeholder galeria %}
+</div>
+<div id="ultimasnoticias">
+  {% placeholder ultimasnoticias %}
+</div>
+<div id="etiquetaemdestaque">
+  {% placeholder etiquetaemdestaque %}
+</div>
+<div id="nuvemdeetiquetas">
+  {% placeholder nuvemdeetiquetas %}
+</div>
+<div id="rodape">
+  {% placeholder rodape %}
+</div>
+{% endblock %}

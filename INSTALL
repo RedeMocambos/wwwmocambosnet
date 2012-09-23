@@ -1,0 +1,36 @@
+Para criar o ambiente rode o script "install-django-env.sh" que se
+encontra na pasta "script":
+
+ ./install-django-env.sh
+
+Para ativar o ambiente:
+
+ source ~/VirtualEnvs/wwwmocambosnet/bin/activate
+
+Copie e/ou altere os arquivos "settings.dist.py" e "urls.py" que
+encontra na pasta "wwwmocambosnet".
+
+Tem que criar o banco de dados e os colocar as informações.
+
+Tem que verificar que todos os links estao certos.
+
+Para configurar o apache pode usar o arquivo de configuração de
+exemplo "conf/wwwmocambosnet".
+
+
+# Referencia passada (...e futura!)
+
+Agora precisa instalar os aplicativos especificos para entrar na rede
+de portais locais e compartilhar arquivos.  Vamos instalar o "mmedia"
+e o "gitannex". Entre na pasta
+"~/VirtualEnvs/wwwmocambosnet/lib/python2.6/site-packages" e digite:
+git clone https://github.com/RedeMocambos/mmedia.git git clone
+https://github.com/RedeMocambos/gitannex.git git clone
+https://github.com/RedeMocambos/baobaxia.git
+
+Agora podem entrar na pasta do portal "NomeDoPortalLocal" e:
+criar a estrutura de pasta para os medias:
+ mkdir -p media/gitannex/taina.mocambos.net/serialized
+
+
+
