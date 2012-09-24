@@ -23,9 +23,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'nomedobanco',                      # Or path to database file if using sqlite3.
-        'USER': 'usuariodobanco',                      # Not used with sqlite3.
-        'PASSWORD': 'senhausuariodobanco',                  # Not used with sqlite3.
+        'NAME': 'wwwmocambosnet_dev',                      # Or path to database file if using sqlite3.
+        'USER': 'boabaxia',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
@@ -177,18 +177,30 @@ INSTALLED_APPS = (
     'south',
     'sekizai',
     'cms.plugins.file',
-#    'cms.plugins.flash',
-#    'cms.plugins.googlemap',
+    'cms.plugins.flash',
+    'cms.plugins.googlemap',
     'cms.plugins.link',
     'cms.plugins.picture',
     'cms.plugins.snippet',
     'cms.plugins.teaser',
     'cms.plugins.text',
     'cms.plugins.video',
-#    'cms.plugins.twitter',
+    'cms.plugins.twitter',
+    'easy_thumbnails',
+    'media_tree',
+    'media_tree.contrib.cms_plugins',
+    'media_tree.contrib.cms_plugins.media_tree_listing',
+    'media_tree.contrib.cms_plugins.media_tree_image',
+    'media_tree.contrib.cms_plugins.media_tree_slideshow',
+    'media_tree.contrib.cms_plugins.media_tree_gallery',
 #    'mocamboszinnia',
 #    'mocambos-portal',
     )
+
+
+MEDIA_TREE_MEDIA_BACKENDS = (
+    'media_tree.contrib.media_backends.easy_thumbnails.EasyThumbnailsBackend',
+)
 
 
 # A sample logging configuration. The only tangible logging
