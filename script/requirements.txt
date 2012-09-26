@@ -8,7 +8,7 @@ distribute==0.6.28
 django-blog-zinnia==0.11.2
 django-classy-tags==0.3.4.1
 django-cms==2.3.3
--e git://github.com/philomat/django-media-tree@200305c7c9be8573f00d3564a309a5403af6b67a#egg=django_media_tree-0.7.0-py2.6-dev
+-e git://github.com/philomat/django-media-tree#egg=django_media_tree
 django-mptt==0.5.4
 django-sekizai==0.6.1
 django-tagging==0.3.1
