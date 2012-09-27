@@ -1,6 +1,6 @@
 <VirtualHost *:80>
-   ServerName dandara
-   ServerAlias dandara.zapto.org
+   ServerName portal.mocambos.net
+   ServerAlias portal.mocambos.org
    ServerAdmin contato@mocambos.org
 
    DocumentRoot /home/baobaxia/wwwmocambosnet/www/
@@ -15,6 +15,7 @@
    Alias /favicon.ico /home/baobaxia/wwwmocambosnet/www/favicon.ico
    Alias /images /home/baobaxia/wwwmocambosnet/www/images
    Alias /static /home/baobaxia/wwwmocambosnet/www/static
+   Alias /media /home/baobaxia/wwwmocambosnet/www/media   
 
    LogLevel debug
    ErrorLog /home/baobaxia/wwwmocambosnet/logs/error.log
