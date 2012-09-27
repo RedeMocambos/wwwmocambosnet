@@ -1,0 +1,23 @@
+<VirtualHost *:80>
+   ServerName portaltes.mocambos.net
+   ServerAlias portaltes.mocambos.org
+   ServerAdmin contato@mocambos.org
+
+   DocumentRoot /home/baobaxia/testando/wwwmocambosnet/www/
+
+   WSGIScriptAlias / /home/baobaxia/testando/wwwmocambosnet/wwwmocambosnet/wsgi.py
+   <Directory /home/baobaxia/testando/wwwmocambosnet/wwwmocambosnet>
+      Order allow,deny
+      Allow from all
+   </Directory>
+
+   Alias /robots.txt /home/baobaxia/testando/wwwmocambosnet/www/robots.txt
+   Alias /favicon.ico /home/baobaxia/testando/wwwmocambosnet/www/favicon.ico
+   Alias /images /home/baobaxia/testando/wwwmocambosnet/www/images
+   Alias /static /home/baobaxia/testando/wwwmocambosnet/www/static
+   Alias /media /home/baobaxia/testando/wwwmocambosnet/www/media
+
+   LogLevel debug
+   ErrorLog /home/baobaxia/testando/wwwmocambosnet/logs/error.log
+   CustomLog /home/baobaxia/testando/wwwmocambosnet/logs/access.log combined
+</VirtualHost>
