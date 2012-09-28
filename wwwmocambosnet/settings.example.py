@@ -11,7 +11,7 @@ STATIC_ROOT = os.path.join(PROJECT_PATH, "../www/static")
 STATIC_URL = "/static/"
 ADMIN_MEDIA_PREFIX = "/static/admin/"
 
-MEDIA_ROOT = os.path.join(PROJECT_PATH, "media")
+MEDIA_ROOT = os.path.join(PROJECT_PATH, "../www/media")
 MEDIA_URL = "/media/"
 
 ADMINS = (

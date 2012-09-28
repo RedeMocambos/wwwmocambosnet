@@ -2,7 +2,24 @@
 
 <html>
   <head>
-      {% render_block "css" %}
+    {% render_block "css" %}
+    {% render_block "js" %}
+<!--
+	A LINHA (% render_block "js" %) ESTAVA COM O BLOCO DE LINHAS IGUAIS LOGO ABAIXO DE <BODY>.
+	ESTE BLOCO DE CSS DEVE SER EMBUTIDO EM UM ARQUIVO EXTERNO.
+	O CSS AQUI CONTIDO SERÁ UTILIZADO NO SLIDER APENAS NA HOME.
+-->
+    <style type="text/css">
+    #slider-container{position:relative; width:610px; height:224px;}
+    #slider-container .slider{position:relative; width:610px; height:200px;}
+    #slidectrl{position:relative; width:610px; height:14px; padding:10px 0 0 0;}
+    #slidectrl .btnslide{width:14px; height:14px; float:right; margin:0 6px 0 0; cursor:pointer;}
+    #slider-container .slide{position:absolute; top:0; left:0; width:610px; height:200px; background-color:#fff;}
+    #slider-container .slide a img{position:absolute; top:0; right:0;}
+    #slider-container .slide .slide-content{position:absolute; top:0; left:0; width:300px;}
+    #slider-container .slide-content h2{font-size:14px; font-weight:bold;}
+    #slider-container .slide-content p{font-size:14px; font-weight:normal;}
+    </style>
   </head>
   <body>
     {% cms_toolbar %}
@@ -10,7 +27,6 @@
     {% page_attribute "slug" request.current_page.get_root %}
     {% placeholder base_content %}
     {% block base_content%}{% endblock %}
-    {% render_block "js" %}
     <ul>
       {% show_menu 0 100 0 1 %}
     </ul>
