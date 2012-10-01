@@ -1,40 +1,8 @@
 {% load cms_tags sekizai_tags menu_tags %}
-
-{% addtoblock "css" %}
-<link href="/media/css/stylesheet.css" media="screen" rel="stylesheet" type="text/css" />
-{% endaddtoblock %}
-
-{% addtoblock "js" %}
-<script type="text/javascript">
-        var _jQuery = window.jQuery || null;
-        var _$ = window.$;
-</script>
-{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}admin/js/jquery.min.js"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/jquery.cookie.js"></script>{% endaddtoblock %}
-{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/classy.min.js"></script>{% endaddtoblock %}
-
-
 <html>
   <head>
     {% render_block "css" %}
     {% render_block "js" %}
-<!--
-	A LINHA (% render_block "js" %) ESTAVA COM O BLOCO DE LINHAS IGUAIS LOGO ABAIXO DE <BODY>.
-	ESTE BLOCO DE CSS DEVE SER EMBUTIDO EM UM ARQUIVO EXTERNO.
-	O CSS AQUI CONTIDO SERÁ UTILIZADO NO SLIDER APENAS NA HOME.
--->
-    <style type="text/css">
-    #slider-container{position:relative; width:610px; height:224px;}
-    #slider-container .slider{position:relative; width:610px; height:200px;}
-    #slidectrl{position:relative; width:610px; height:14px; padding:10px 0 0 0;}
-    #slidectrl .btnslide{width:14px; height:14px; float:right; margin:0 6px 0 0; cursor:pointer;}
-    #slider-container .slide{position:absolute; top:0; left:0; width:610px; height:200px; background-color:#fff;}
-    #slider-container .slide a img{position:absolute; top:0; right:0;}
-    #slider-container .slide .slide-content{position:absolute; top:0; left:0; width:300px;}
-    #slider-container .slide-content h2{font-size:14px; font-weight:bold;}
-    #slider-container .slide-content p{font-size:14px; font-weight:normal;}
-    </style>
   </head>
   <body>
     {% cms_toolbar %}
@@ -47,3 +15,24 @@
     </ul>
   </body>
 </html>
+
+
+{% addtoblock "css" %}
+    <link href="{{ STATIC_URL }}css/mocambos_slider.css" media="screen" rel="stylesheet" type="text/css" />
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+    <script type="text/javascript">
+            var _jQuery = window.jQuery || null;
+            var _$ = window.$;
+    </script>
+{% endaddtoblock %}
+{% addtoblock "js" %}
+    <script type="text/javascript" src="{{ STATIC_URL }}admin/js/jquery.min.js"></script>
+{% endaddtoblock %}
+{% addtoblock "js" %}
+    <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/jquery.cookie.js"></script>
+{% endaddtoblock %}
+{% addtoblock "js" %}
+    <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/classy.min.js"></script>
+{% endaddtoblock %}
