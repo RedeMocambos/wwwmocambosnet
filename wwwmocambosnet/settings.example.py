@@ -193,6 +193,7 @@ INSTALLED_APPS = (
     'media_tree.contrib.cms_plugins.media_tree_image',
     'media_tree.contrib.cms_plugins.media_tree_slideshow',
     'media_tree.contrib.cms_plugins.media_tree_gallery',
+    'wwwmocambosnet',
 #    'mocamboszinnia',
 #    'mocambos-portal',
     )

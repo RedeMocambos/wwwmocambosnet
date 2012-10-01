@@ -1,5 +1,20 @@
 {% load cms_tags sekizai_tags menu_tags %}
 
+{% addtoblock "css" %}
+<link href="/media/css/stylesheet.css" media="screen" rel="stylesheet" type="text/css" />
+{% endaddtoblock %}
+
+{% addtoblock "js" %}
+<script type="text/javascript">
+        var _jQuery = window.jQuery || null;
+        var _$ = window.$;
+</script>
+{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}admin/js/jquery.min.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/jquery.cookie.js"></script>{% endaddtoblock %}
+{% addtoblock "js" %}<script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/classy.min.js"></script>{% endaddtoblock %}
+
+
 <html>
   <head>
     {% render_block "css" %}
