@@ -23,13 +23,17 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'wwwmocambosnet_dev',                      # Or path to database file if using sqlite3.
-        'USER': 'boabaxia',                      # Not used with sqlite3.
+        'NAME': 'wwwmocambosnet_desenvolvendo',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'OPTIONS': { 'init_command': 'SET storage_engine=INNODB' }
     }
 }
+
+
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -177,15 +181,15 @@ INSTALLED_APPS = (
     'south',
     'sekizai',
     'cms.plugins.file',
-    'cms.plugins.flash',
-    'cms.plugins.googlemap',
+#    'cms.plugins.flash',
+#    'cms.plugins.googlemap',
+#    'cms.plugins.twitter',
     'cms.plugins.link',
     'cms.plugins.picture',
     'cms.plugins.snippet',
     'cms.plugins.teaser',
     'cms.plugins.text',
     'cms.plugins.video',
-    'cms.plugins.twitter',
     'easy_thumbnails',
     'media_tree',
     'media_tree.contrib.cms_plugins',
@@ -194,8 +198,7 @@ INSTALLED_APPS = (
     'media_tree.contrib.cms_plugins.media_tree_slideshow',
     'media_tree.contrib.cms_plugins.media_tree_gallery',
     'wwwmocambosnet',
-#    'mocamboszinnia',
-#    'mocambos-portal',
+    'pagetags',
     )
 
 

@@ -14,7 +14,8 @@ urlpatterns = patterns('',
                        url(r'^comments/', include('django.contrib.comments.urls')),
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),                       
-                       url(r'^', include('cms.urls')),                       
+                       url(r'^', include('cms.urls')),
+                       url(r'^admin/tagging/autocomplete', include('pagetags.urls')),                       
                        )
 
 
