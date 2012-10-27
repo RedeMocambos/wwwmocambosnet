@@ -9,7 +9,7 @@ TEMPLATE_DEBUG = DEBUG
 
 STATIC_ROOT = os.path.join(PROJECT_PATH, "../www/static")
 STATIC_URL = "/static/"
-ADMIN_MEDIA_PREFIX = "/static/admin/"
+#ADMIN_MEDIA_PREFIX = "/static/admin/"
 
 MEDIA_ROOT = os.path.join(PROJECT_PATH, "../www/media")
 MEDIA_URL = "/media/"
@@ -160,7 +160,7 @@ TEMPLATE_DIRS = (
 )
 
 
-ZINNIA_ENTRY_BASE_MODEL = 'mocamboszinnia.modelos.EntryMocambos'
+#ZINNIA_ENTRY_BASE_MODEL = 'mocamboszinnia.modelos.EntryMocambos'
 
 INSTALLED_APPS = (
     'django.contrib.staticfiles',
@@ -199,6 +199,8 @@ INSTALLED_APPS = (
     'media_tree.contrib.cms_plugins.media_tree_gallery',
     'wwwmocambosnet',
     'pagetags',
+#    'smartsnippets',
+    'django_extensions',
     )
 
 
@@ -206,6 +208,10 @@ MEDIA_TREE_MEDIA_BACKENDS = (
     'media_tree.contrib.media_backends.easy_thumbnails.EasyThumbnailsBackend',
 )
 
+CMSPLUGIN_ZINNIA_TEMPLATES = [
+    ('zinnia/mocambos_slide_3.html', 'Slide de 3 noticias'),
+    ('zinnia/mocambos_noticias_3.html', 'Ultimas 3 noticias'),
+]
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to

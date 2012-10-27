@@ -1,6 +1,7 @@
 {% load i18n static %}
 {% load mocambos_extra %}
 {% if entries %}
+<div class="grid-12">
 <div id="slider-container">
   <div class="slider">
       {% for entry in entries %}
@@ -8,15 +9,17 @@
       <!-- CORRIGIR LINHA ABAIXO. TRECHO INACABADO: style="z-index:10(( forloop.counter )) -->
       <!-- CORRIGIR LINHA ABAIXO. TRECHO INACABADO: style="z-index:10(( forloop.counter )) -->
       <div class="slide" id="slide{{ forloop.counter }}" style="z-index:10{{ forloop.counter }}">
+        {% if entry.image %}
         <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">
           {% load thumbnail %}
-          <img src="{% if entry.image %}{% thumbnail entry.image 300x200 crop %}{% endif %}" alt="{{ entry.title }}" />
+          <img src="{% thumbnail entry.image 320x240 crop %}" alt="{{ entry.title }}" />
         </a>
+        {% endif %}
         <div class="slide-content">
           <h2>
             <a href="{{ entry.get_absolute_url }}" rel="bookmark" title="{{ entry.title }}">{{ entry.title }}</a>
           </h2>
-          {{ entry.excerpt|linebreaks|truncatewords_html:30 }}
+          {{ entry.excerpt|cut:"&nbsp;"|striptags|linebreaks|truncatewords_html:30 }}
         </div>
       </div>
       {% endfor %}
@@ -26,8 +29,9 @@
   {% for i in 4|get_range %}
 {% if i > 0 %}    <img src="{{ STATIC_URL }}imagens/circulo.png" class="btnslide" title="{{ i }}" />{% endif %}
   {% endfor %}
-    <div style="clear:both; width:0; height:0;" />
+    <div style="clear:both; width:0; height:0;"></div>
   </div>
+</div>
 </div>
 <script type="text/javascript">
 //<![CDATA[
