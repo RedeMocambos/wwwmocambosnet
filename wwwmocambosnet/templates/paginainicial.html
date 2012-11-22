@@ -1,10 +1,8 @@
 {% extends "base.html" %}
 {% load cms_tags zinnia_tags sekizai_tags %}
 
-{% addtoblock "css" %}                                                                                                                                            <link href="{{ STATIC_URL }}css/toast/toast.css" rel="stylesheet" type="text/css" />                                       
-{% endaddtoblock %}
-
 {% block base_content %}
+
 <div class="wrap">
   <div class="grids">
     <div id="cabecalho">
@@ -24,7 +22,7 @@
     </div>
     <div id="nuvemdeetiquetas" class="tag-cloud grid-4">
       {% get_tag_cloud %}
-      {% include "mocambos_tag_cloud.html" %}
+      <!-- {% include "mocambos_tag_cloud.html" %} -->
       {% placeholder nuvemdeetiquetas %}
     </div>
     <div id="rodape">

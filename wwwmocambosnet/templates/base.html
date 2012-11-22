@@ -4,117 +4,74 @@
     {% render_block "css" %}
     {% render_block "js" %}
     <style type="text/css">
-    div.divlinha{position:relative; width:940px; margin:0 auto; clear:both;}
-    #bdpagina{text-align:center; margin:74px 0 0 0;}
-    #bdpagina #menumcmbs{left:200px; position:absolute; top:20px; width:100%; z-index:99999;}
-    #bdpagina #menumcmbs .mnuwrapp{left:0; position:fixed; top:0; width:100%; height:41px; background-color: rgba(100,100,100,0.8); z-index:99999;}
-    #logomenu{position: fixed; left: 100px; margin-top: 4px;}
-    #caminho {left:0; position:fixed; top:40; width:100%; height:26px; background-color: rgba(120,120,120,0.8); z-index:99998;}
-    #caminho li {display: inline; list-type-style: none; padding-right: 2px; font-size: 14px; text-decoration: none; color: green; text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);}
-    #caminho .breadcrumbs {display: inline; list-type-style: none; padding-right: 2px; font-size: 14px; text-decoration: none; color: green; text-shadow: 0px 2px 2px rgba(255, 255, 255, 0.4);}
-    #caminho a {color: black; text-decoration: none;}
-    #slideshow{position:relative; width:940px; margin:0 auto;}
-    #slideshow .imgsldivpdr{float:left; width:150px; position:relative; text-align:center;}
-    #slideshow .imgsldivm{margin-left:7px;}
-    #slideshow .imgsldivpdr span{font-weight:bold; font-size:12px;}
-    #setaslde{position:absolute; top:0; left:0;}
-    #setasldd{position:absolute; top:0; right:0;}
-    #slideshow .asetaesq{position:asbolu}
-    #slider-container{position:relative; width:940px; height:270px; margin:0 auto;}
-    #slider-container .slider{position:relative; width:940px; height:240px;}
-    #slidectrl{position:relative; width:940px; height:14px; padding:10px 0 0 0;}
-    #slidectrl .btnslide{width:14px; height:14px; float:right; margin:0 6px 0 0; cursor:pointer;}
-    #slider-container .slide{position:absolute; top:0; left:0; width:940px; height:240px; background-color:#fff;}
-    #slider-container .slide a img{position:absolute; top:0; right:0;}
-    #slider-container .slide .slide-content{position:absolute; top:0; left:0; width:462px; text-align:left;}
-    #slider-container .slide-content h2{font-size:24px; font-weight:bold;}
-    #slider-container .slide-content p{font-size:18px; font-weight:normal;}
-
-
-    /*---- CROSS BROWSER DROPDOWN MENU ----*/
-    ul#nav {margin: 0 0 0 300px;}
-    ul.drop a { display:block; color: #fff; font-size: 16px; text-decoration: none; text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);}
-    ul.drop, ul.drop li, ul.drop ul { list-style: none; margin: 0; padding: 0; border: 0px solid #fff; color: #fff;}
-    ul.drop { position: relative; z-index: 597; float: left; }
-    ul.drop li { float: left; line-height: 1.3em; vertical-align: middle; zoom: 1; padding: 10px 10px; }
-    ul.drop li.hover, ul.drop li:hover { position: relative; z-index: 599; cursor: default; background: rgba(100,100,100,0.8); }
-    ul.drop ul { visibility: hidden; position: absolute; top: 100%; left: 0; z-index: 598; width: 195px; background: rgba(100,100,100,0.8); border: 0px solid #fff; }
-    ul.drop ul li { float: none; }
-    ul.drop ul ul { top: -2px; left: 100%; }
-    ul.drop li:hover > ul { visibility: visible }
-    li.selected a {font-weight: bold;}
-    
-
-    <!-- #ultimasnoticias .hentry {position:relative; float:left; margin-left:14px; width:304px;} -->
-    <!-- #ultimasnoticias #entry-1{margin-left:0;} -->
-    <!-- #ultimasnoticias .hentry .entry-title {font-size:12px; font-weight:bold;} -->
-    <!-- #ultimasnoticias .hentry .entry-title a {color:#000; text-decoration:none;} -->
-    <!-- #ultimasnoticias .hentry .entry-title a {color:#000; text-decoration:underline;} -->
-    <!-- #ultimasnoticias .hentry .entry-info {display:none;} -->
-    <!-- #ultimasnoticias .hentry .entry-footer{display:none;} -->
-    <!-- #ultimasnoticias .hentry .continue-reading{display:none;} -->
-    <!-- #ultimasnoticias .hentry .entry-image{width:304px; height:200px;} -->
-    <!-- #ultimasnoticias .hentry .entry-image img{width:304px; height:200px;} -->
-    <!-- #ultimasnoticias .hentry .entry-content{width:304px;} -->
-
-.tag-cloud {
-  padding: 0;
-  font-size: 12px;
-  line-height: 1.2 * 12px;
-}
-.tag-cloud li {
-    list-style: none;
-    display: inline;
-  }
-.tag-cloud .tag-1 {
-    font-size: 10px;
-    color: grey;
-  }
-.tag-cloud .tag-2 {
-    font-size: 12px;
-    color: pink;
-  }
-.tag-cloud .tag-3 {
-    font-size: 16px;
-    color: yellow;
-  }
-.tag-cloud .tag-4 {
-    font-size: 18px;
-    color: red;
-  }
-.tag-cloud .tag-5 {
-    font-size: 20px;
-    color: green;
-  }
-.tag-cloud .tag-6 {
-    font-size: 22px;
-    color: black;
-  }
 
     </style>
   </head>
-  <body id="bdpagina">
-    <div id="menumcmbs">
-      <div class="mnuwrapp">
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Rede Mocambos</a>
+          <div class="nav-collapse collapse">
+	    <ul class="nav">
+	      <li class="active"><a href="#">Home</a></li>
+              <ul class="dropdown-menu">{% show_menu 0 100 100 100 %}</ul>
+	    </ul>
+
+            <!--   <li class="active"><a href="#">Home</a></li> -->
+            <!--   <li><a href="#about">About</a></li> -->
+            <!--   <li><a href="#contact">Contact</a></li> -->
+            <!--   <li class="dropdown"> -->
+            <!--     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a> -->
+            <!--     <ul class="dropdown-menu"> -->
+
+            <!--       <li><a href="#">Action</a></li> -->
+            <!--       <li><a href="#">Another action</a></li> -->
+            <!--       <li><a href="#">Something else here</a></li> -->
+            <!--       <li class="divider"></li> -->
+            <!--       <li class="nav-header">Nav header</li> -->
+            <!--       <li><a href="#">Separated link</a></li> -->
+
+            <!--       <li><a href="#">One more separated link</a></li> -->
+            <!--     </ul> -->
+            <!--   </li> -->
+            <!-- </ul> -->
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Sign in</button>
+
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div>
+      <div>
 	<a href="/"><img id="logomenu" src="{{ STATIC_URL }}imagens/logo.png"/></a>
 	<ul id="nav" class="drop">{% show_menu 0 100 100 100 %}</ul>
     </div>
     </div>
-    <div id="caminho">{% show_breadcrumb %}{% block breadcrumbs %}{% endblock %}</div>
+    <div>{% show_breadcrumb %}{% block breadcrumbs %}{% endblock %}</div>
     {% placeholder base_content %}
     {% block base_content%}{% endblock %}
     {% block content %} {% endblock %}
   </body>
 </html>
 
-<!-- COLLECT STATIC PARA FUNCIONAR. ATUALIZAR ARQUIVO, pois joguei o CSS acima na <head> desse HTML
 {% addtoblock "css" %}
-    <link href="{{ STATIC_URL }}css/mocambos_slider.css?v=123" media="screen" rel="stylesheet" type="text/css" />
-{% endaddtoblock %}
--->
-
-{% addtoblock "css" %}
-    <link rel="stylesheet" href="{{ STATIC_URL }}css/toast/toast.css" type="text/css" />
+    <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" media="screen" />
 {% endaddtoblock %}
 {% addtoblock "js" %}
     <script type="text/javascript">
@@ -126,8 +83,6 @@
     <script type="text/javascript" src="{{ STATIC_URL }}admin/js/jquery.min.js"></script>
 {% endaddtoblock %}
 {% addtoblock "js" %}
-    <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.min.js"></script>
 {% endaddtoblock %}
-{% addtoblock "js" %}
-    <script type="text/javascript" src="{{ STATIC_URL }}cms/js/libs/classy.min.js"></script>
-{% endaddtoblock %}
+
