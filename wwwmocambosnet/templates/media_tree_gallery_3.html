@@ -8,8 +8,8 @@
   <!-- <div class="imgsldivpdr{% if forloop.counter > 1 %} imgsldivm{% endif %}"> -->
   <div class="grid-2">
 <!--    <a href="{{ image_node.file.url }}"><img src="{% thumbnail image_node.file 150x150 crop %}" alt="{{ image_node.file.get_alt|default:"imagem sem nome" }}" /></a><!-- ALT="IMAGEM SEM NOME" >>> corrigir isso. -->
-  <a href="{{ image_node.parent.url }}"><img src="{% thumbnail image_node.file 150x150 crop %}" alt="{{ image_node.file.get_alt|default:"imagem sem nome" }}" /></a><!-- ALT="IMAGEM SEM NOME" >>> corrigir isso. -->
-    <span>{{ image_node.file.get_alt|default:"imagem sem nome" }}</span>
+  <a href="{{ image_node.parent.url }}"><img src="{% thumbnail image_node.file 150x150 crop %}" alt="{{ image_node.alt|default:"imagem sem nome" }}" /></a><!-- ALT="IMAGEM SEM NOME" >>> corrigir isso. -->
+    <span>{{ image_node.alt|default:"imagem sem nome" }}</span>
   </div>
 <!-- INICIO teste inacabado -->
 <!--

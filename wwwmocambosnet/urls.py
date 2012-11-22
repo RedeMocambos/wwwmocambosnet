@@ -18,9 +18,9 @@ urlpatterns = patterns('',
                        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),              
                        url(r'^', include('cms.urls')),
                        url(r'^admin/tagging/autocomplete', include('pagetags.urls')),
-                       (r'^images/(?P<pk>\d+)/$', ImageNodeDetailView.as_view(
-            queryset=FileNode.objects.get(path='Taina').get_descendants()
-            )),
+#                       (r'^images/(?P<pk>\d+)/$', ImageNodeDetailView.as_view(
+#            queryset=FileNode.objects.get(path='Taina').get_descendants()
+#            )),
                        #(r'^listing/', FileNodeListingView.as_view(
 #            queryset=[FileNode.objects.get(path='taina')],
 #            list_max_depth=2
