@@ -2,32 +2,14 @@
 {% load thumbnail %}
 
 {% if node_list %}
-
-<div id="slideshow">
-  {% for image_node in node_list|shuffle|slice:":6" %}
-  <!-- <div class="imgsldivpdr{% if forloop.counter > 1 %} imgsldivm{% endif %}"> -->
-  <div class="grid-2">
-<!--    <a href="{{ image_node.file.url }}"><img src="{% thumbnail image_node.file 150x150 crop %}" alt="{{ image_node.file.get_alt|default:"imagem sem nome" }}" /></a><!-- ALT="IMAGEM SEM NOME" >>> corrigir isso. -->
-  <a href="{{ image_node.parent.url }}"><img src="{% thumbnail image_node.file 150x150 crop %}" alt="{{ image_node.file.get_alt|default:"imagem sem nome" }}" /></a><!-- ALT="IMAGEM SEM NOME" >>> corrigir isso. -->
+{% for image_node in node_list|shuffle|slice:":6" %}
+  
+  <div class="span2">
+    <a href="{{ image_node.parent.url }}">
+      <img src="{% thumbnail image_node.file 150x150 crop %}" alt="{{ image_node.file.get_alt|default:"imagem sem nome" }}" />
     <span>{{ image_node.file.get_alt|default:"imagem sem nome" }}</span>
+    </a>
   </div>
-<!-- INICIO teste inacabado -->
-<!--
-    {% if image_node.has_metadata %}
-    {% block caption %}
-    <span class="caption">
-        {{ image_node.get_caption_formatted }}
-    </span>
-    {% endblock %}
-    {% endif %}
--->
-<!-- FIM teste inacabado -->
-  {% endfor %}
-  <!-- <div style="clear:both; width:0; height:0;"></div> -->
-  <!-- <img src="{{ STATIC_URL }}imagens/seta_slide_esq.png" id="setaslde" /> -->
-  <!-- <img src="{{ STATIC_URL }}imagens/seta_slide_dir.png" id="setasldd" /> -->
-  <!-- <a href="#" class="asetas asetaesq">esquerda</a> -->
-  <!-- <a href="#" class="asetas asetadir">direita</a> -->
-</div>
 
+{% endfor %}
 {% endif %}

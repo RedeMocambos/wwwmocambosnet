@@ -3,31 +3,24 @@
 
 {% block base_content %}
 
-<div class="wrap">
-  <div class="grids">
-    <div id="cabecalho">
-      {% placeholder cabecalho %}
-    </div>
-    <div id="destaque">
+<div class="row">
+    {% placeholder cabecalho %}
+</div>
+
+<div class="row">
       {% placeholder destaque %}
-    </div>
-    <div id="galeria">
+</div>
+
+<div class="row">
       {% placeholder galeria %}
-    </div>
-<!--    <div id="ultimasnoticias" class="divlinha"> -->
+</div>
+
+<div class="row">
       {% placeholder ultimasnoticias %}
-<!--    </div> -->
-    <div id="etiquetaemdestaque">
+</div>
+
       {% placeholder etiquetaemdestaque %}
-    </div>
-    <div id="nuvemdeetiquetas" class="tag-cloud grid-4">
-      {% get_tag_cloud %}
-      <!-- {% include "mocambos_tag_cloud.html" %} -->
-      {% placeholder nuvemdeetiquetas %}
-    </div>
-    <div id="rodape">
+
       {% placeholder rodape %}
-    </div>
-  </div><!-- Fim do grids -->  
-</div><!-- Fim do wrap -->
+
 {% endblock %}

@@ -1,114 +1,34 @@
 {% load i18n static %}
 {% load mocambos_extra %}
 {% if entries %}
-<div class="grid-12">
-<div id="slider-container">
-  <div class="slider">
-      {% for entry in entries %}
-      <!-- CORRIGIR LINHA ABAIXO. TRECHO INACABADO: style="z-index:10(( forloop.counter )) -->
-      <!-- CORRIGIR LINHA ABAIXO. TRECHO INACABADO: style="z-index:10(( forloop.counter )) -->
-      <!-- CORRIGIR LINHA ABAIXO. TRECHO INACABADO: style="z-index:10(( forloop.counter )) -->
-      <div class="slide" id="slide{{ forloop.counter }}" style="z-index:10{{ forloop.counter }}">
+<div class="hero-unit">
+
+  <div id="myCarousel" class="carousel slide">
+    <!-- Carousel items -->
+    
+    {% for entry in entries %}
+    <div class="carousel-inner">
+      <div class="item">
         {% if entry.image %}
         <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">
           {% load thumbnail %}
           <img src="{% thumbnail entry.image 320x240 crop %}" alt="{{ entry.title }}" />
         </a>
         {% endif %}
-        <div class="slide-content">
+        <div>
           <h2>
             <a href="{{ entry.get_absolute_url }}" rel="bookmark" title="{{ entry.title }}">{{ entry.title }}</a>
           </h2>
           {{ entry.excerpt|cut:"&nbsp;"|striptags|linebreaks|truncatewords_html:30 }}
         </div>
       </div>
-      {% endfor %}
+    </div>
+    {% endfor %}
+    
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
   </div>
-  <div id="slidectrl">
-      <!-- CORRIGIR LINHA ABAIXO. TRECHO INACABADO, aliás, precisa mesmo ser dinâmico ou dexa assim?: (% for i in 4|get_range %) -->
-  {% for i in 4|get_range %}
-{% if i > 0 %}    <img src="{{ STATIC_URL }}imagens/circulo.png" class="btnslide" title="{{ i }}" />{% endif %}
-  {% endfor %}
-    <div style="clear:both; width:0; height:0;"></div>
-  </div>
+
 </div>
-</div>
-<script type="text/javascript">
-//<![CDATA[
-var maxban = 3;//máximo de posts  ISSO TEM Q SER DINÃMICO DESPOIS
-var counter = maxban;
-var zindxmax = 100+maxban;
-var zindxsub = zindxmax-1;
-var timer;
-var tempotrans = 4000;
-var liberaslide = true;
-var agendaslide = false;
-var qualagenda = 0;
-jQuery(document).ready(function($){
-//FUNÇÕES PAINEL DE IMAGENS
-  function mudaDiv(paramMDa) {
-    $('#slide'+counter).css("z-index", 100);
-    counter = paramMDa;
-    counter++;
-    if(counter>maxban){ counter = 1 }
-    var countxa = paramMDa;
-    if(maxban>2){
-      var countxb = countxa-1;
-      if(countxb<1){ countxb = maxban; }
-      $('#slide'+counter).css("z-index", 100);
-      $('#slide'+countxa).css("z-index", zindxmax);
-      $('#slide'+countxb).css("z-index", zindxsub);
-    } else{
-      $('#slide'+counter).css("z-index", 100);
-      $('#slide'+countxa).css("z-index", zindxmax);
-    }
-    counter--;
-    if(counter<1){ counter = maxban; }
-    if(maxban>1){
-      timer = setInterval(showDiv, tempotrans);
-    }
-  }
-  function showDiv() {
-    liberaslide = false;
-    $('#slide'+counter).fadeOut('slow', function() {
-      var countxa = counter-1;
-      if(countxa<1){ countxa = maxban; }
-      if(maxban>2){
-        var countxb = countxa-1;
-        if(countxb<1){ countxb = maxban; }
-        $('#slide'+counter).css("z-index", 100);
-        $('#slide'+countxa).css("z-index", zindxmax);
-        $('#slide'+countxb).css("z-index", zindxsub);
-      } else{
-        $('#slide'+counter).css("z-index", 100);
-        $('#slide'+countxa).css("z-index", zindxmax);
-      }
-      $('#slide'+counter).show();
-      counter--;
-      if(counter<1){ counter = maxban; }
-      liberaslide = true;
-      if(agendaslide){
-        agendaslide = false;
-        mudaDiv(qualagenda);
-        qualagenda = 0;
-      }
-    });
-  }
-//BOTÕES DO PAINEL DE IMAGENS
-  $('img.btnslide').click(function() {
-    timer = clearInterval(timer);
-    if(liberaslide){
-      mudaDiv($(this).attr("title"));
-    } else{
-      agendaslide = true;
-      qualagenda = $(this).attr("title");
-    }
-  });
-//INICIALIZA TEMPORIZADOR DE TRANSIÇÃO
-  if(maxban>1){
-    timer = setInterval(showDiv, tempotrans);
-  }
-});
-//]]>
-</script>
 {% endif %}

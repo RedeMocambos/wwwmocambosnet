@@ -1,7 +1,7 @@
 {% load i18n %}
 {% for entry in entries %}
   {% with object=entry object_content=entry.html_content|truncatewords_html:100|safe continue_reading=1 %}
-  <div class="grid-4">
+  <div class="span4">
   <!-- {% include "zinnia/_entry_detail.html" %} -->
 
 <!-- ----------------------------------------------------------------------------- -->
