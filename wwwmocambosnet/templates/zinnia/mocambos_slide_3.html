@@ -1,30 +1,30 @@
 {% load i18n static %}
 {% load mocambos_extra %}
 {% if entries %}
-<div class="hero-unit">
+<div class="span9">
 
-  <div id="myCarousel" class="carousel slide">
+  <div id="myCarousel" class="carousel slide" data-interval="6000" data-pause="hover">
     <!-- Carousel items -->
-    
-    {% for entry in entries %}
     <div class="carousel-inner">
-      <div class="item">
+      
+      {% for entry in entries %}
+      <div class="{% if forloop.first %}active{% endif %} item">
         {% if entry.image %}
         <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">
           {% load thumbnail %}
-          <img src="{% thumbnail entry.image 320x240 crop %}" alt="{{ entry.title }}" />
+          <img src="{% thumbnail entry.image 400x240 crop %}" alt="{{ entry.title }}" />
         </a>
         {% endif %}
-        <div>
-          <h2>
+        <div class="carousel-caption">
+          <h4>
             <a href="{{ entry.get_absolute_url }}" rel="bookmark" title="{{ entry.title }}">{{ entry.title }}</a>
-          </h2>
-          {{ entry.excerpt|cut:"&nbsp;"|striptags|linebreaks|truncatewords_html:30 }}
+          </h4>
+          <p>{{ entry.excerpt|cut:"&nbsp;"|striptags|linebreaks|truncatewords_html:30 }}</p>
         </div>
       </div>
+      {% endfor %}
+
     </div>
-    {% endfor %}
-    
     <!-- Carousel nav -->
     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
