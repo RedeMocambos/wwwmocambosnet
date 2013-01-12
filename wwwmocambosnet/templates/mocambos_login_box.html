@@ -9,16 +9,48 @@
 {% csrf_token %}
 <table>
 <tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
+    <td>{{ form.username.label_tag }}
+      Usuário:
+    </td>
+    <td>{{ form.username }}
+      <input type="text" name="username" value="{{ username}}" /><br />
+    </td>
 </tr>
 <tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
+    <td>{{ form.password.label_tag }}
+      Senha:
+    </td>
+    <td>{{ form.password }}
+      <input type="password" name="password" value="" /><br />
+    </td>
 </tr>
 </table>
 
 <input type="submit" value="login" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
+
+
+
+
+  <!-- <form action="/login/" method="post"> -->
+  <!--   {% csrf_token %} -->
+  <!--   {% if next %} -->
+  <!--   <input type="hidden" name="next" value="{{ next }}" /> -->
+  <!--   {% endif %} -->
+  <!--   username: -->
+  <!--   <input type="text" name="username" value="{{ username}}" /><br /> -->
+  <!--   password: -->
+  <!--   <input type="password" name="password" value="" /><br /> -->
+
+  <!--   <input type="submit" value="Log In" /> -->
+  <!--   </form> -->
+
+
+
+
+
+
+
+
 </div>

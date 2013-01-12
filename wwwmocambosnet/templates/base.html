@@ -13,6 +13,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
+
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+            m4v: "http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer_480x270_h264aac.m4v",
+            ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer_480x270.ogv",
+            poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+          });
+        },
+        swfPath: "/js",
+        supplied: "m4v, ogv"
+      });
+      });
+    </script>
+
+
+
   </head>
   <body>
 
@@ -63,6 +83,9 @@
 {% addtoblock "css" %}
 <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap-responsive.min.css" media="screen" />
 {% endaddtoblock %}
+{% addtoblock "css" %}
+<link rel="stylesheet" href="{{ STATIC_URL }}skin/blue.monday/jplayer.blue.monday.css" media="screen" />
+{% endaddtoblock %}
 {% addtoblock "js" %}
 <script type="text/javascript">
   var _jQuery = window.jQuery || null;
@@ -75,7 +98,9 @@
 {% addtoblock "js" %}
 <script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
 {% endaddtoblock %}
-
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jplayer.min.js"></script>
+{% endaddtoblock %}
 
 
 

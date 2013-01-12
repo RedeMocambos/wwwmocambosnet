@@ -49,6 +49,8 @@
 {% load tagging_tags comments i18n %}
 {% load thumbnail %}
 
+
+AAAAAAAAAAAAAAAAAAA
 <div id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}">
   <div class="entry-header">
     <h2 class="entry-title">
@@ -79,6 +81,7 @@
     </p>
   </div>
 
+BBBBBBBBBBBBBBBBBBBBBBB
   <div class="entry-body">
     {% if object.image %}
     <div class="entry-image">
@@ -96,6 +99,8 @@
     <div class="entry-content">
       {{ object_content }}
     </div>
+CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC
+
     {% if continue_reading %}
     <p class="continue-reading">
       <a href="{{ object.get_absolute_url }}"
@@ -167,7 +172,7 @@
 </div>
 
 
-
+DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 
 
 
@@ -224,6 +229,8 @@
 	  </div>
 	</div>
 	{% endblock %}
+
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
 
 	{% block entry-comments %}
 	<div id="comments">
