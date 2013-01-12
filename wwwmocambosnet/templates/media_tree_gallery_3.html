@@ -6,7 +6,7 @@
   
   <div class="span2">
     <a href="{{ image_node.parent.url }}">
-      <img src="{% thumbnail image_node.file 150x150 crop %}" alt="{{ image_node.file.get_alt|default:"imagem sem nome" }}" />
+      <img src="{% thumbnail image_node.file 150x150 crop %}" alt="{{ image_node.file.get_alt|default:"imagem sem nome" }}"  class="img-polaroid"/>
     <span>{{ image_node.file.get_alt|default:"imagem sem nome" }}</span>
     </a>
   </div>
