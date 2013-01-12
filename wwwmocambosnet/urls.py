@@ -19,6 +19,7 @@ urlpatterns = patterns('',
                        url(r'^admin/doc/', include('django.contrib.admindocs.urls')),              
                        url(r'^', include('cms.urls')),
                        url(r'^admin/tagging/autocomplete', include('pagetags.urls')),
+                       url(r'^meta', 'display_meta'),
                        )
 
 

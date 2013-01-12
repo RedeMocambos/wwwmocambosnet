@@ -1,7 +1,7 @@
 {% spaceless %}
 <a href="{{ image_node.link.href }}"{% if image_node.link.target %} target="{{ image_node.link.target }}{% endif %}"{% if image_node.link.rel %} rel="{{ image_node.link.rel }}{% endif %}">
 {% block image %}
-    <img src="{{ image_node.file.url }}" alt="{{ image_node.alt }}" width="{{ image_node.width }}" class="oilaimagenode" height="{{ image_node.height }}" />
+    <img src="{{ image_node.file.url }}" alt="{{ image_node.alt }}" width="{{ image_node.width }}" class="img-polaroid" height="{{ image_node.height }}" />
 {% endblock %}
 </a>
 <a style="display: none" rel="image-full" href="{{ image_node.file.url }}">TESTE</a>
