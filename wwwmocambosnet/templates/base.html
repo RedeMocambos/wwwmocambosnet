@@ -20,23 +20,24 @@
       $("#jquery_jplayer_1").jPlayer({
         ready: function () {
           $(this).jPlayer("setMedia", {
-            m4v: "http://www.jplayer.org/video/m4v/Big_Buck_Bunny_Trailer_480x270_h264aac.m4v",
-            ogv: "http://www.jplayer.org/video/ogv/Big_Buck_Bunny_Trailer_480x270.ogv",
-            poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
+            ogv: "http://bbx.mocambos.net/taina/projetos/Bbx/Video/baobaxia.ogg",
+            //poster: "http://www.jplayer.org/video/poster/Big_Buck_Bunny_Trailer_480x270.png"
           });
         },
         swfPath: "/js",
-        supplied: "m4v, ogv"
+        supplied: "ogv",
       });
       });
+
     </script>
 
 
 
   </head>
   <body>
-
+{% cms_toolbar %}
     <div class="navbar navbar-fixed-top">
+      <!-- <div style="background-image: url('http://bbx.mocambos.net/taina/projetos/PortalDaRede_2013/filrasta_repeat.png'); background-position: right bottom; background-repeat: repeat-x;"</div> -->
       <div class="navbar-inner">
 
 	<div class="container">
@@ -57,7 +58,7 @@
 	    </form>
 	  </div><!--/.nav-collapse -->
 	</div><!--/container -->
-
+<!--      <img src="http://bbx.mocambos.net/taina/projetos/PortalDaRede_2013/filrasta.png" style="margin-top: -6px" /> -->
       </div>
     </div>
 

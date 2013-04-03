@@ -164,7 +164,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #e9ddaf;
 }
 
 a {
@@ -4170,7 +4170,7 @@ input[type="submit"].btn.btn-mini {
   *z-index: 2;
   margin-bottom: 20px;
   overflow: visible;
-  color: #777777;
+  color: #e9ddaf;
 }
 
 .navbar-inner {
