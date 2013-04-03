@@ -3,10 +3,15 @@ encontra na pasta "script":
 
  ./install-django-env.sh
 
-Copie e/ou altere os arquivos "settings.dist.py" e "urls.py" que
+Copie e altere os arquivos "settings.example.py" e "wsgi.example.py" que
 encontra na pasta "wwwmocambosnet".
 
 Tem que criar o banco de dados e os colocar as informações.
+Para mysql poder usar:
+ mysql -uroot -p
+ mysql> create database wwwmocambosnet character set utf8;
+ mysql> grant usage on localhost.* to 'baobaxia'@'localhost' identified by 'senhadobaobaxia';
+ mysql> grant all privileges on wwwmocambosnet.* to 'baobaxia'@'localhost';
 
 Tem que verificar que todos os links estao certos.
 

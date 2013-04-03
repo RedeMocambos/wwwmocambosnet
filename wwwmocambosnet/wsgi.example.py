@@ -17,7 +17,7 @@ import os
 import sys
 import site
 
-path1 = '/home/baobaxia/testando/wwwmocambosnet'
+path1 = '/home/baobaxia/wwwmocambosnet'
 if path1 not in sys.path:
     sys.path.append(path1)
 
@@ -26,7 +26,7 @@ if path1 not in sys.path:
 #     sys.path.append(path2)
 
 
-site.addsitedir('/home/baobaxia/VirtualEnvs/wwwmocambosnet_testando/lib/python2.6/site-packages')
+site.addsitedir('/home/baobaxia/VirtualEnvs/wwwmocambosnet/lib/python2.6/site-packages')
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wwwmocambosnet.settings")
 

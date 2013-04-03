@@ -15,6 +15,7 @@
    Alias /favicon.ico /home/baobaxia/desenvolvendo/wwwmocambosnet/www/favicon.ico
    Alias /images /home/baobaxia/desenvolvendo/wwwmocambosnet/www/images
    Alias /static /home/baobaxia/desenvolvendo/wwwmocambosnet/www/static
+   Alias /media /home/baobaxia/desenvolvendo/wwwmocambosnet/www/media
 
    LogLevel debug
    ErrorLog /home/baobaxia/desenvolvendo/wwwmocambosnet/logs/error.log

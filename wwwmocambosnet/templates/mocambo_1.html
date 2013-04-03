@@ -1,6 +1,35 @@
 {% extends "base.html" %}
-{% load cms_tags %}
+{% load cms_tags zinnia_tags sekizai_tags%}
 
 {% block base_content %}
-  {% placeholder mocambo_1_content %}
+
+<div class="wrap">
+  <div class="grids">
+
+    <div id="cabecalho">
+      {% placeholder cabecalho %}
+    </div>
+
+    <div id="destaque">
+      {% placeholder destaque %}
+    </div>
+
+    <div id="galeria">
+      {% placeholder galeria %}
+    </div>
+    
+    <div class="grid-12" id="ultimasnoticias">
+      {% placeholder ultimasnoticias %}
+    </div>
+    
+    <div id="etiquetaemdestaque">
+      {% placeholder etiquetaemdestaque %}
+    </div>
+    
+    <div id="rodape">
+      {% placeholder rodape %}
+    </div>
+  </div> <!-- Fim do grids -->
+</div> <!-- Fim do wrap -->
+
 {% endblock %}

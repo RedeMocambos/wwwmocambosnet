@@ -9,9 +9,9 @@ TEMPLATE_DEBUG = DEBUG
 
 STATIC_ROOT = os.path.join(PROJECT_PATH, "../www/static")
 STATIC_URL = "/static/"
-ADMIN_MEDIA_PREFIX = "/static/admin/"
+#ADMIN_MEDIA_PREFIX = "/static/admin/"
 
-MEDIA_ROOT = os.path.join(PROJECT_PATH, "media")
+MEDIA_ROOT = os.path.join(PROJECT_PATH, "../www/media")
 MEDIA_URL = "/media/"
 
 ADMINS = (
@@ -23,13 +23,17 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'wwwmocambosnet_dev',                      # Or path to database file if using sqlite3.
-        'USER': 'boabaxia',                      # Not used with sqlite3.
+        'NAME': 'wwwmocambosnet_desenvolvendo',                      # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'OPTIONS': { 'init_command': 'SET storage_engine=INNODB' }
     }
 }
+
+
+
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -156,7 +160,7 @@ TEMPLATE_DIRS = (
 )
 
 
-ZINNIA_ENTRY_BASE_MODEL = 'mocamboszinnia.modelos.EntryMocambos'
+#ZINNIA_ENTRY_BASE_MODEL = 'mocamboszinnia.modelos.EntryMocambos'
 
 INSTALLED_APPS = (
     'django.contrib.staticfiles',
@@ -177,15 +181,15 @@ INSTALLED_APPS = (
     'south',
     'sekizai',
     'cms.plugins.file',
-    'cms.plugins.flash',
-    'cms.plugins.googlemap',
+#    'cms.plugins.flash',
+#    'cms.plugins.googlemap',
+#    'cms.plugins.twitter',
     'cms.plugins.link',
     'cms.plugins.picture',
     'cms.plugins.snippet',
     'cms.plugins.teaser',
     'cms.plugins.text',
     'cms.plugins.video',
-    'cms.plugins.twitter',
     'easy_thumbnails',
     'media_tree',
     'media_tree.contrib.cms_plugins',
@@ -193,8 +197,10 @@ INSTALLED_APPS = (
     'media_tree.contrib.cms_plugins.media_tree_image',
     'media_tree.contrib.cms_plugins.media_tree_slideshow',
     'media_tree.contrib.cms_plugins.media_tree_gallery',
-#    'mocamboszinnia',
-#    'mocambos-portal',
+    'wwwmocambosnet',
+    'pagetags',
+#    'smartsnippets',
+    'django_extensions',
     )
 
 
@@ -202,6 +208,10 @@ MEDIA_TREE_MEDIA_BACKENDS = (
     'media_tree.contrib.media_backends.easy_thumbnails.EasyThumbnailsBackend',
 )
 
+CMSPLUGIN_ZINNIA_TEMPLATES = [
+    ('zinnia/mocambos_slide_3.html', 'Slide de 3 noticias'),
+    ('zinnia/mocambos_noticias_3.html', 'Ultimas 3 noticias'),
+]
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
