@@ -9,6 +9,83 @@
       padding-top: 60px;
       padding-bottom: 40px;
       }
+
+ul.tags {
+      margin-top: 10px;
+      list-style-type: none;
+}
+
+tags.li {
+      float: left;
+}
+
+ul.tags li a {
+      text-decoration: none;
+  /*    line-height: 2.3em; */
+}
+
+ul.tags li a.tag-1 {
+      color: #666;
+      padding: 2px;
+      font-size: 0.7em;
+}
+      ul.tags li a.tag-1:hover {
+      background-color: #999;
+      color: white;
+      }
+
+ul.tags li a.tag-2 {
+      color: #ffaa33;
+      padding: 12px;
+      font-size: 0.8em;
+}
+      ul.tags li a.tag-2:hover {
+      background-color: #cc3500;
+      color: white;
+      }
+
+ul.tags li a.tag-3 {
+      color: #877900;
+      padding: 18px;
+      font-size: 0.9em;
+}
+      ul.tags li a.tag-3:hover {
+      background-color: #d8c100;
+      color: white;
+      }
+      
+ul.tags li a.tag-4 {
+      color: #00ffaa;
+      padding: 8px;
+      font-size: 1em;
+}
+      ul.tags li a.tag-4:hover {
+      background-color: #2daf00;
+      color: white;
+      }
+ul.tags li a.tag-5 {
+      color: #008800;
+      padding: 6px;
+      font-size: 1.1em;
+}
+      ul.tags li a.tag-5:hover {
+      background-color: #007ead;
+      color: white;
+      }
+      
+ul.tags li a.tag-6 {
+      color: #ff0000;
+      padding: 24px;
+      font-size: 1.2em;
+}
+      ul.tags li a.tag-6:hover {
+      background-color: #7600b9;
+      color: white;
+      }
+
+
+
+
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -35,7 +112,7 @@
 
   </head>
   <body>
-{% cms_toolbar %}
+
     <div class="navbar navbar-fixed-top">
       <!-- <div style="background-image: url('http://bbx.mocambos.net/taina/projetos/PortalDaRede_2013/filrasta_repeat.png'); background-position: right bottom; background-repeat: repeat-x;"</div> -->
       <div class="navbar-inner">
@@ -49,7 +126,7 @@
 	  <a class="brand" href="/">
 	    <img id="logomenu" style="height: 40px; margin-top: -10px; margin-bottom: -8px;" src="{{ STATIC_URL }}imagens/logo.png"/>
 	  </a>
-	  <div class="nav-collapse collapse">
+	  <div class="nav-collapse collapse" style="font-weight: bold">
 	    <ul class="nav">
 	      {% show_menu 0 100 100 100 "mocambos_menu.html" %}
 	    </ul>
@@ -91,6 +168,12 @@
 <script type="text/javascript">
   var _jQuery = window.jQuery || null;
   var _$ = window.$;
+
+  $(function(){
+    $('.carousel').carousel();
+  });
+</script>
+
 </script>
 {% endaddtoblock %}
 {% addtoblock "js" %}
