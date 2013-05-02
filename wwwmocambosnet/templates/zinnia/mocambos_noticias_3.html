@@ -9,7 +9,7 @@
 {% load tagging_tags comments i18n %}
 {% load url from future %}
 {% load thumbnail %}
-<div id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}">
+<div id="entry-{{ object.pk }}" class="hentry{% if object.featured %} featured{% endif %}" style="margin-top: 10px; padding: 14px; background-color: #dddd88; -moz-border-radius: 10px; border-radius: 10px;">
   <div class="entry-header">
     <h2 class="entry-title">
       <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
@@ -41,12 +41,12 @@
 
   <div class="entry-body">
     {% if object.image %}
-    <div class="entry-image">
+    <div class="entry-image" style="float: right; margin: 8px">
       <p>
         {% if continue_reading %}
         <a href="{{ object.get_absolute_url }}" title="{{ object.title }}" rel="bookmark">
           {% endif %}
-          <img src="{% thumbnail object.image 200x200 crop %}" alt="{{ object.title }}" class="left" />
+          <img src="{% thumbnail object.image 150x150 crop %}" alt="{{ object.title }}" class="left" />
           {% if continue_reading %}
         </a>
         {% endif %}
