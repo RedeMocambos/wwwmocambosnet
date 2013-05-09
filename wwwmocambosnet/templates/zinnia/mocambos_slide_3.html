@@ -1,8 +1,7 @@
 {% load i18n static %}
 {% load mocambos_extra %}
 {% if entries %}
-<div class="span12">
-
+<div class="span12" style="margin-top: -10px">
   <div id="myCarousel" class="carousel slide" data-interval="6000" data-pause="hover">
     <!-- Carousel items -->
     <div class="carousel-inner">
@@ -12,10 +11,10 @@
         {% if entry.image %}
         <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">
           {% load thumbnail %}
-	  <img src="{% thumbnail entry.image 800x280 crop %}" alt="{{ entry.title }}"/>
+	  <img src="{% thumbnail entry.image 900x280 crop %}" alt="{{ entry.title }}"/>
         </a>
         {% endif %}
-        <div class="carousel-caption" style="-moz-border-radius: 10px; border-radius: 10px; padding: 4px;">
+        <div class="carousel-caption" style="padding: 8px; -moz-border-radius: 10px; border-radius: 10px;">
           <h3>
             <a href="{{ entry.get_absolute_url }}" rel="bookmark" title="{{ entry.title }}">{{ entry.title }}</a>
           </h3>
@@ -29,6 +28,5 @@
     <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
     <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
   </div>
-
 </div>
 {% endif %}
