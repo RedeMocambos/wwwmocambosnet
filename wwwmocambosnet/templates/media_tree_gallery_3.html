@@ -2,14 +2,16 @@
 {% load thumbnail %}
 
 {% if node_list %}
-{% for image_node in node_list|shuffle|slice:":11" %}
-  
-  <div class="span1">
-    <a href="{{ image_node.file.url }}">
-      <img src="{% thumbnail image_node.file 120x120 crop %}" alt="{{ image_node.alt|default:"^_^_^_^" }}"  class="img-polaroid"/>
-    <div style="margin: 0px; font-size: 12px; font-weight: bold; color: green; padding: 0px; line-height: 15px; text-align: center">{{ image_node.alt|default:"^_^_^_^" }}</div>
-    </a>
-  </div>
-
+  <ul class="thumbnails">
+    {% for image_node in node_list|shuffle|slice:"6" %}
+    <li class ="span2">
+      <span>
+	<a href="{{ image_node.file.url }}" class="thumbnail">
+	  <img src="{% thumbnail image_node.file 200x200 crop %}" alt="{{ image_node.alt|default:"^_^_^_^" }}" class="img-rounded"/>
+	</a>
+      </span>
+    </li>
 {% endfor %}
+  </ul>    
+
 {% endif %}

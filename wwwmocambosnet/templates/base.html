@@ -83,6 +83,14 @@ ul.tags li a.tag-6 {
       color: white;
       }
 
+    .footer {
+      margin-bottom: 0px;
+      padding: 20px;
+      background-color: #F5F5F5;
+      color: #444444;
+    }
+
+
 
 
 
@@ -135,7 +143,7 @@ ul.tags li a.tag-6 {
 	    </form>
 	  </div><!--/.nav-collapse -->
 	</div><!--/container -->
-<!--      <img src="http://bbx.mocambos.net/taina/projetos/PortalDaRede_2013/filrasta.png" style="margin-top: -6px" /> -->
+
       </div>
     </div>
 
@@ -152,8 +160,80 @@ ul.tags li a.tag-6 {
       
     </div><!--/container -->
 
+
+    <div class="footer navbar-bottom">
+      <div class="container">
+
+	<div class="row">
+	  <div class="span12">
+	    <p>Rede Mocambos, Núcleo de Pesquisa e Desenvolvimento Digital e Casa de Cultura Tainã... Asé!</p>
+	  </div>
+	</div>
+
+	<div class="row">
+	  <ul class="thumbnails" style="margin-left: 0px">
+	    <li class ="span2">
+	      <a href="/mocambos/nucleos/casa-de-cultura-taina/" class="thumbnail">
+		<img style="height: 90px" src="/static/imagens/Logo_Taina_2.png" alt="Casa de Cultura Tainã">
+	      </a>
+	    </li>
+	    <li class="span2">
+	      <a href="http://wiki.mocambos.net/wiki/NPDD" class="thumbnail">
+		<img style="height: 90px" src="/static/imagens/Adinkra_nkyinkyim_iniciativa_dinamismo_adaptacao.png" alt="NPDD">
+	      </a>
+	    </li>
+	    <li class="span2">
+	      <a href="http://wiki.mocambos.net/wiki/NPDD" class="thumbnail">
+		<img style="height: 30px" src="/static/imagens/Adinkra_nkyinkyim_iniciativa_dinamismo_adaptacao.png" alt="NPDD">
+	      </a>
+	    </li>
+	    <li class="span2">
+	      <a href="http://wiki.mocambos.net/wiki/NPDD" class="thumbnail">
+		<img style="height: 30px" src="/static/imagens/Adinkra_nkyinkyim_iniciativa_dinamismo_adaptacao.png" alt="NPDD">
+	      </a>
+	    </li>
+	    <li class="span2">
+	      <a href="http://wiki.mocambos.net/wiki/NPDD" class="thumbnail">
+		<img style="height: 30px" src="/static/imagens/Adinkra_nkyinkyim_iniciativa_dinamismo_adaptacao.png" alt="NPDD">
+	      </a>
+	    </li>
+	    <li class="span2">
+	      <a href="http://wiki.mocambos.net/wiki/NPDD" class="thumbnail">
+		<img style="height: 30px" src="/static/imagens/Adinkra_nkyinkyim_iniciativa_dinamismo_adaptacao.png" alt="NPDD">
+	      </a>
+	    </li>
+	    <li class="span2">
+	      <a href="http://wiki.mocambos.net/wiki/NPDD" class="thumbnail">
+		<img style="height: 30px" src="/static/imagens/Adinkra_nkyinkyim_iniciativa_dinamismo_adaptacao.png" alt="NPDD">
+	      </a>
+	    </li>
+	    <li class="span2">
+	      <a href="http://wiki.mocambos.net/wiki/NPDD" class="thumbnail">
+		<img style="height: 30px" src="/static/imagens/Adinkra_nkyinkyim_iniciativa_dinamismo_adaptacao.png" alt="NPDD">
+	      </a>
+	    </li>
+	    <li class="span2">
+	      <a href="http://wiki.mocambos.net/wiki/NPDD" class="thumbnail">
+		<img style="height: 30px" src="/static/imagens/Adinkra_nkyinkyim_iniciativa_dinamismo_adaptacao.png" alt="NPDD">
+	      </a>
+	    </li>
+	    <li class="span2">
+	      <a href="http://wiki.mocambos.net/wiki/NPDD" class="thumbnail">
+		<img style="height: 30px" src="/static/imagens/Adinkra_nkyinkyim_iniciativa_dinamismo_adaptacao.png" alt="NPDD">
+	      </a>
+	    </li>
+	  </ul>
+	</div>
+
+      </div>
+    </div>
+
   </body>
 </html>
+
+
+
+
 
 {% addtoblock "css" %}
 <link rel="stylesheet" href="{{ STATIC_URL }}bootstrap/css/bootstrap.min.css" media="screen" />
@@ -164,6 +244,17 @@ ul.tags li a.tag-6 {
 {% addtoblock "css" %}
 <link rel="stylesheet" href="{{ STATIC_URL }}skin/blue.monday/jplayer.blue.monday.css" media="screen" />
 {% endaddtoblock %}
+
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
+{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
+{% endaddtoblock %}
+{% addtoblock "js" %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jplayer.min.js"></script>
+{% endaddtoblock %}
+
 {% addtoblock "js" %}
 <script type="text/javascript">
   var _jQuery = window.jQuery || null;
@@ -175,15 +266,6 @@ ul.tags li a.tag-6 {
 </script>
 
 </script>
-{% endaddtoblock %}
-{% addtoblock "js" %}
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery-1.8.3.min.js"></script>
-{% endaddtoblock %}
-{% addtoblock "js" %}
-<script type="text/javascript" src="{{ STATIC_URL }}bootstrap/js/bootstrap.js"></script>
-{% endaddtoblock %}
-{% addtoblock "js" %}
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.jplayer.min.js"></script>
 {% endaddtoblock %}
 
 

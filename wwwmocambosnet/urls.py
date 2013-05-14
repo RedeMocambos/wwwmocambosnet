@@ -12,6 +12,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
+                       (r'^openid/', include('django_openid_auth.urls')),
                        url(r'^weblog/', include('zinnia.urls')),
                        url(r'^comments/', include('django.contrib.comments.urls')),
 #                       url(r'^accounts/login$', 'django.contrib.auth.views.login'),
