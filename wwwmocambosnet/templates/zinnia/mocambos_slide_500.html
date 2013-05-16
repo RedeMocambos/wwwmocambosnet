@@ -1,0 +1,30 @@
+{% load i18n static %}
+{% load mocambos_extra %}
+{% if entries %}
+  <div id="myCarousel" class="carousel slide" data-interval="6000" data-pause="hover">
+    <!-- Carousel items -->
+    <div class="carousel-inner">
+      
+      {% for entry in entries %}
+      <div class="{% if forloop.first %}active{% endif %} item" style="text-align: center">
+        {% if entry.image %}
+        <a href="{{ entry.get_absolute_url }}" title="{{ entry.title }}">
+          {% load thumbnail %}
+	  <img src="{% thumbnail entry.image 500x280 crop %}" alt="{{ entry.title }}"/>
+        </a>
+        {% endif %}
+        <div class="carousel-caption" style="padding: 8px; -moz-border-radius: 10px; border-radius: 10px;">
+          <h3>
+            <a href="{{ entry.get_absolute_url }}" rel="bookmark" title="{{ entry.title }}">{{ entry.title }}</a>
+          </h3>
+          <p>{{ entry.excerpt|cut:"&nbsp;"|striptags|linebreaks|truncatewords_html:30 }}</p>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+    <!-- Carousel nav -->
+    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+{% endif %}

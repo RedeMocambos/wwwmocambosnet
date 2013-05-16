@@ -4,19 +4,19 @@
 {% if child.is_leaf_node %} 
  <li class="{% if child.selected %}selected{% endif %}{% if child.ancestor %}ancestor{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %}">
  <a href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}</a>
- {% if child.children %}
-     <ul>
-         {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
-     </ul>
-     {% endif %}
+ <!-- {% if child.children %} -->
+ <!--     <ul> -->
+ <!--         {% show_menu from_level to_level extra_inactive extra_active template "" "" child %} -->
+ <!--     </ul> -->
+ <!--     {% endif %} -->
  </li>
 
 {% else %}
 
- <li class="{% if child.selected %}selected{% endif %}{% if child.ancestor %}ancestor{% endif %}{% if child.sibling %}sibling{% endif %}{% if child.descendant %}descendant{% endif %} {% if child.is_leaf_node %} {% else %} dropdown {% endif %}">
- <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}<b class="caret"></b></a>
+ <li class="dropdown-submenu {% if child.selected %}selected{% endif %}{% if child.ancestor %}ancestor{% endif %}{% if child.descendant %}descendant{% endif %}">
+ <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="{{ child.attr.redirect_url|default:child.get_absolute_url }}">{{ child.get_menu_title }}<!--<b class="caret"></b>--></a>
  {% if child.children %}
-     <ul class="dropdown-menu {% if child.is_leaf_node %} {% else %} sub-menu{% endif %}">
+     <ul class="dropdown-menu submenu">
          {% show_menu from_level to_level extra_inactive extra_active template "" "" child %}
      </ul>
      {% endif %}

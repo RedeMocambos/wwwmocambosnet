@@ -1,7 +1,7 @@
 {% load i18n %}
 {% for entry in entries %}
   {% with object=entry object_content=entry.html_content|truncatewords_html:100|safe continue_reading=1 %}
-  <div class="span4">
+  <div class="span4" style="margin-top: -20px">
   <!-- {% include "zinnia/_entry_detail.html" %} -->
 
 <!-- ----------------------------------------------------------------------------- -->
@@ -54,22 +54,23 @@
     </div>
     {% endif %}
     <div class="entry-content">
-      {{ object_content }}
+      {{ object_content|truncatewords_html:30}}
     </div>
     {% if continue_reading %}
     <p class="continue-reading">
       <a href="{{ object.get_absolute_url }}"
          title="{% blocktrans with object=object.title %}Continue reading {{ object }}{% endblocktrans %}"
          rel="bookmark">
-        {% trans "Continue reading" %}
+        <!-- {% trans "Continue reading" %} -->
+	<i class="icon-road"></i> Continua...
       </a>
     </p>
     {% endif %}
   </div>
 
   <div class="entry-footer">
-    <p class="entry-tags">
-      <strong>{% trans "Tags" %}</strong> :
+    <p class="entry">
+      <i class="icon-tags"></i> <strong>{% trans "Tags" %}</strong>:
       {% tags_for_object object as tag_list %}
       {% for tag in tag_list %}
       <a href="{% url 'zinnia_tag_detail' tag %}"
@@ -80,17 +81,17 @@
       {% endfor %}
     </p>
 
-    <p class="entry-shorturl">
-      <strong>{% trans "Short url" %}</strong> :
-      <a href="{{ object.short_url }}"
-         title="{% blocktrans with object=object.title %}Short URL to {{ object }}{% endblocktrans %}"
-         rel="shortlink">
-        {{ object.short_url }}
-      </a>
-    </p>
+    <!-- <p class="entry-shorturl"> -->
+    <!--   <i class="icon-arrow-right"></i> <strong>{% trans "Short url" %}</strong>: -->
+    <!--   <a href="{{ object.short_url }}" -->
+    <!--      title="{% blocktrans with object=object.title %}Short URL to {{ object }}{% endblocktrans %}" -->
+    <!--      rel="shortlink"> -->
+    <!--     {{ object.short_url }} -->
+    <!--   </a> -->
+    <!-- </p> -->
 
     <p class="entry-comments">
-      <strong>{% trans "Discussions" %}</strong> :
+      <i class="icon-comment"></i> <strong>{% trans "Discussions" %}</strong>:
       {% with comment_count=object.comments.count %}
       {% if comment_count %}
       <a href="{{ object.get_absolute_url }}#comments"

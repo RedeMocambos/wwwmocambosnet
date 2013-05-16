@@ -5,11 +5,12 @@
   <ul class="thumbnails">
     {% for image_node in node_list|shuffle|slice:"6" %}
     <li class ="span2">
-      <span>
+
 	<a href="{{ image_node.file.url }}" class="thumbnail">
-	  <img src="{% thumbnail image_node.file 200x200 crop %}" alt="{{ image_node.alt|default:"^_^_^_^" }}" class="img-rounded"/>
+	  <img src="{% thumbnail image_node.file 150x150 crop %}" alt="{{ image_node.alt|default:"^_^_^_^" }}" class="img-rounded"/>
 	</a>
-      </span>
+	<p class="" style="font-weight: bold; font-size: 0.8em; color: white; text-align: center; margin-top: -30px">{{ image_node.alt|default:"^_^_^_^" }}</p>
+
     </li>
 {% endfor %}
   </ul>    
